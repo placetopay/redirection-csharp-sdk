@@ -1,0 +1,25 @@
+﻿using PlacetoPay.Integrations.Library.CSharp.Contracts;
+
+namespace PlacetoPay.Integrations.Library.CSharp.Entities
+{
+    public class Bank : Entity
+    {
+        public const int INT_PUBLIC = 0;
+        public const int INT_BUSINESS = 1;
+
+        private int einterface;
+        private string code;
+        private string name;
+
+        public Bank(string code, string name, int einterface = 0)
+        {
+            this.einterface = einterface;
+            this.code = code;
+            this.name = name;
+        }
+
+        public int Einterface { get => einterface; set => einterface = value; }
+        public string Code { get => code; set => code = value; }
+        public string Name { get => name; set => name = value; }
+    }
+}
