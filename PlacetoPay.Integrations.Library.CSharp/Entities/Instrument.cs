@@ -24,10 +24,35 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.password = password;
         }
 
-        public Bank Bank { get => bank; set => bank = value; }
-        public Card Card { get => card; set => card = value; }
-        public Token Token { get => token; set => token = value; }
-        public string Pin { get => pin; set => pin = value; }
-        public string Password { get => password; set => password = value; }
+        public Bank Bank
+        {
+            get { return bank; }
+            set { bank = value; }
+        }
+
+        public Card Card
+        {
+            get { return card; }
+            set { card = value; }
+        }
+
+        public Token Token
+        {
+            get { return token; }
+            set { token = value; }
+        }
+
+        public string Pin
+        {
+            get { return pin; }
+            set { pin = value; }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
     }
 }

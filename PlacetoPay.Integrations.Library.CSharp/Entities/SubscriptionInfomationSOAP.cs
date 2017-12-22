@@ -1,4 +1,6 @@
-﻿namespace PlacetoPay.Integrations.Library.CSharp.Entities
+﻿using PlacetoPay.Integrations.Library.CSharp.Entities.ModelSubscription;
+
+namespace PlacetoPay.Integrations.Library.CSharp.Entities
 {
     public class SubscriptionInfomationSOAP
     {
@@ -13,8 +15,44 @@
             this.instrument = instrument;
         }
 
-        public string Type { get => type; set => type = value; }
-        public Status Status { get => status; set => status = value; }
-        public ModelSubscription.Instrument Instrument { get => instrument; set => instrument = value; }
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+
+            set
+            {
+                type = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public ModelSubscription.Instrument Instrument
+        {
+            get
+            {
+                return instrument;
+            }
+
+            set
+            {
+                instrument = value;
+            }
+        }
+
     }
 }

@@ -21,11 +21,41 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.notificationUrl = notificationUrl;
         }
 
-        public string Periodicity { get => periodicity; set => periodicity = value; }
-        public int Interval { get => interval; set => interval = value; }
-        public string NextPayment { get => nextPayment; set => nextPayment = value; }
-        public int MaxPeriods { get => maxPeriods; set => maxPeriods = value; }
-        public string DueDate { get => dueDate; set => dueDate = value; }
-        public string NotificationUrl { get => notificationUrl; set => notificationUrl = value; }
+        public string Periodicity
+        {
+            get { return periodicity; }
+            set { periodicity = value; }
+        }
+
+        public int Interval
+        {
+            get { return interval; }
+            set { interval = value; }
+        }
+
+        public string NextPayment
+        {
+            get { return nextPayment; }
+            set { nextPayment = value; }
+        }
+
+        public int MaxPeriods
+        {
+            get { return maxPeriods; }
+            set { maxPeriods = value; }
+        }
+
+        public string DueDate
+        {
+            get { return dueDate; }
+            set { dueDate = value; }
+        }
+
+        public string NotificationUrl
+        {
+            get { return notificationUrl; }
+            set { notificationUrl = value; }
+        }
+
     }
 }

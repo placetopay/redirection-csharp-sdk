@@ -15,8 +15,22 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.factor = factor;
         }
 
-        public float Factor { get => factor; set => factor = value; }
-        public AmountBase From { get => from; set => from = value; }
-        public AmountBase To { get => to; set => to = value; }
+        public float Factor
+        {
+            get { return factor; }
+            set { factor = value; }
+        }
+
+        public AmountBase From
+        {
+            get { return from; }
+            set { from = value; }
+        }
+
+        public AmountBase To
+        {
+            get { return to; }
+            set { to = value; }
+        }
     }
 }

@@ -38,8 +38,15 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             }
         }
 
-        public string Login { get => login; set => login = value; }
-        public string TranKey { get => tranKey; set => tranKey = value; }
+        public string Login {
+            get { return login; }
+            set { login = value; }
+        }
+
+        public string TranKey {
+            get { return tranKey; }
+            set { tranKey = value; }
+        }
 
         public string Digest()
         {

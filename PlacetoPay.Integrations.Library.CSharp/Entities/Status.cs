@@ -30,9 +30,23 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.date = date;
         }
 
-        public string Reason { get => reason; set => reason = value; }
-        public string Message { get => message; set => message = value; }
-        public string Date { get => date; set => date = value; }
+        public string Reason
+        {
+            get { return reason; }
+            set { reason = value; }
+        }
+
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
+
+        public string Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
 
         public bool IsSuccessful()
         {

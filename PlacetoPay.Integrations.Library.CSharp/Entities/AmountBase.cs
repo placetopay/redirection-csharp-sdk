@@ -13,7 +13,16 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.total = total;
         }
 
-        public string Currency { get => currency; set => currency = value; }
-        public float Total { get => total; set => total = value; }
+        public string Currency
+        {
+            get { return currency; }
+            set { currency = value; }
+        }
+
+        public float Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
     }
 }

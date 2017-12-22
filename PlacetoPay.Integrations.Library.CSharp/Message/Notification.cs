@@ -25,12 +25,6 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.tranKey = tranKey;
         }
 
-        public int RequestId { get => requestId; set => requestId = value; }
-        public string Reference { get => reference; set => reference = value; }
-        public string Signature { get => signature; set => signature = value; }
-        public Status Status { get => status; set => status = value; }
-        public string TranKey { get => tranKey; set => tranKey = value; }
-
         public bool IsApproved()
         {
             return this.status.status.Equals(Status.ST_APPROVED);
@@ -39,6 +33,71 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
         public bool IsRejected()
         {
             return this.status.status.Equals(Status.ST_REJECTED);
+        }
+
+        public int RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+
+            set
+            {
+                requestId = value;
+            }
+        }
+
+        public string Reference
+        {
+            get
+            {
+                return reference;
+            }
+
+            set
+            {
+                reference = value;
+            }
+        }
+
+        public string Signature
+        {
+            get
+            {
+                return signature;
+            }
+
+            set
+            {
+                signature = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public string TranKey
+        {
+            get
+            {
+                return tranKey;
+            }
+
+            set
+            {
+                tranKey = value;
+            }
         }
     }
 }

@@ -17,15 +17,11 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.requestId = requestId;
             this.status = status;
             this.request = request;
-            this.Payment = payment;
-            this.Subscription = subscription;
+            this.payment = payment;
+            this.subscription = subscription;
         }
 
-        public int RequestId { get => requestId; set => requestId = value; }
-        public Status Status { get => status; set => status = value; }
-        public RedirectRequest Request { get => request; set => request = value; }
-        public List<TransactionSOAP> Payment { get => payment; set => payment = value; }
-        internal SubscriptionInfomationSOAP Subscription { get => subscription; set => subscription = value; }
+
 
         public bool IsSuccessful()
         {
@@ -40,6 +36,71 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
         public bool IsRejected()
         {
             return this.status.status.Equals(Status.ST_REJECTED);
+        }
+
+        public int RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+
+            set
+            {
+                requestId = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public RedirectRequest Request
+        {
+            get
+            {
+                return request;
+            }
+
+            set
+            {
+                request = value;
+            }
+        }
+
+        public List<TransactionSOAP> Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public SubscriptionInfomationSOAP Subscription
+        {
+            get
+            {
+                return subscription;
+            }
+
+            set
+            {
+                subscription = value;
+            }
         }
 
     }

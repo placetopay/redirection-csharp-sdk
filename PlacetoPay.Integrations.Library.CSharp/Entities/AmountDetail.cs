@@ -13,7 +13,16 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.amount = amount;
         }
 
-        public string Kind { get => kind; set => kind = value; }
-        public float Amount { get => amount; set => amount = value; }
+        public string Kind
+        {
+            get { return kind; }
+            set { kind = value; }
+        }
+
+        public float Amount
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
     }
 }

@@ -6,12 +6,12 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
 {
     public class CollectRequest : Entity
     {
-        protected string locale;
-        protected Person payer;
-        protected Person buyer;
-        protected Payment payment;
-        protected Instrument instrument;
-        protected List<NameValuePair> fields;
+        private string locale;
+        private Person payer;
+        private Person buyer;
+        private Payment payment;
+        private Instrument instrument;
+        private List<NameValuePair> fields;
 
         public CollectRequest(Person payer, Payment payment, Instrument instrument, string locale = "es_CO", Person buyer = null)
         {
@@ -22,16 +22,87 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.instrument = instrument;
         }
 
-        public string Locale { get => locale; set => locale = value; }
-        public Person Payer { get => payer; set => payer = value; }
-        public Person Buyer { get => buyer; set => buyer = value; }
-        public Payment Payment { get => payment; set => payment = value; }
-        public Instrument Instrument { get => instrument; set => instrument = value; }
-        public List<NameValuePair> Fields { get => fields; set => fields = value; }
-
         public string Language()
         {
             return locale.Substring(0, 2).ToUpper();
+        }
+
+        public string Locale
+        {
+            get
+            {
+                return locale;
+            }
+
+            set
+            {
+                locale = value;
+            }
+        }
+
+        public Person Payer
+        {
+            get
+            {
+                return payer;
+            }
+
+            set
+            {
+                payer = value;
+            }
+        }
+
+        public Person Buyer
+        {
+            get
+            {
+                return buyer;
+            }
+
+            set
+            {
+                buyer = value;
+            }
+        }
+
+        public Payment Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public Instrument Instrument
+        {
+            get
+            {
+                return instrument;
+            }
+
+            set
+            {
+                instrument = value;
+            }
+        }
+
+        public List<NameValuePair> Fields
+        {
+            get
+            {
+                return fields;
+            }
+
+            set
+            {
+                fields = value;
+            }
         }
 
     }

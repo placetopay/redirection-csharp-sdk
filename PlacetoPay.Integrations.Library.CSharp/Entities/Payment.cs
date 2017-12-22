@@ -28,14 +28,59 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.transaction = transaction;
         }
 
-        public string Reference { get => reference; set => reference = value; }
-        public string Description { get => description; set => description = value; }
-        public Amount Amount { get => amount; set => amount = value; }
-        public bool AllowPartial { get => allowPartial; set => allowPartial = value; }
-        public Person Shipping { get => shipping; set => shipping = value; }
-        public List<Item> Items { get => items; set => items = value; }
-        public Recurring Recurring { get => recurring; set => recurring = value; }
-        public Instrument Instrument { get => instrument; set => instrument = value; }
-        public Transaction Transaction { get => transaction; set => transaction = value; }
+        public string Reference
+        {
+            get { return reference; }
+            set { reference = value; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        public Amount Amount
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
+
+        public bool AllowPartial
+        {
+            get { return allowPartial; }
+            set { allowPartial = value; }
+        }
+
+        public Person Shipping
+        {
+            get { return shipping; }
+            set { shipping = value; }
+        }
+
+        public List<Item> Items
+        {
+            get { return items; }
+            set { items = value; }
+        }
+
+        public Recurring Recurring
+        {
+            get { return recurring; }
+            set { recurring = value; }
+        }
+
+        public Instrument Instrument
+        {
+            get { return instrument; }
+            set { instrument = value; }
+        }
+
+        public Transaction Transaction
+        {
+            get { return transaction; }
+            set { transaction = value; }
+        }
+
     }
 }

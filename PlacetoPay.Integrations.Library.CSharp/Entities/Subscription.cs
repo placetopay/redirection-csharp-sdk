@@ -13,7 +13,31 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.description = description;
         }
 
-        public string Reference { get => reference; set => reference = value; }
-        public string Description { get => description; set => description = value; }
+        public string Reference
+        {
+            get
+            {
+                return reference;
+            }
+
+            set
+            {
+                reference = value;
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+
+            set
+            {
+                description = value;
+            }
+        }
+
     }
 }

@@ -14,9 +14,31 @@ namespace PlacetoPay.Integrations.Library.CSharp.Contracts
             this.config = config;
         }
 
-        protected Authentication Authentication { get => authentication; set => authentication = value; }
-        protected Configuration Config { get => config; set => config = value; }
+        protected Authentication Authentication
+        {
+            get
+            {
+                return authentication;
+            }
 
+            set
+            {
+                authentication = value;
+            }
+        }
+
+        protected Configuration Config
+        {
+            get
+            {
+                return config;
+            }
+
+            set
+            {
+                config = value;
+            }
+        }
 
         public abstract RedirectResponse Request(RedirectRequest redirectRequest);
 

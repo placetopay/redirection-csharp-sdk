@@ -11,12 +11,35 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
         private string country;
         private string phone;
 
-        public string Street { get => street; set => street = value; }
-        public string City { get => city; set => city = value; }
-        public string State { get => state; set => state = value; }
-        public string PostalCode { get => postalCode; set => postalCode = value; }
-        public string Country { get => country; set => country = value; }
-        public string Phone { get => phone; set => phone = value; }
+        public string Street {
+            get { return street; }
+            set { street = value; }
+        }
+
+        public string City {
+            get { return city; }
+            set { city = value; }
+        }
+        
+        public string State {
+            get { return state; }
+            set { state = value; }
+            }
+        
+        public string PostalCode {
+            get { return postalCode; }
+            set { postalCode = value; }
+        }
+        
+        public string Country {
+            get { return country; }
+            set { country = value; }
+        }
+        
+        public string Phone {
+            get { return phone; }
+            set { phone = value; }
+        }
 
         public Address(string street, string city, string state, string postalCode, string country, string phone)
         {

@@ -13,11 +13,26 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
         {
             this.type = type;
             this.status = status;
-            this.Instrument = instrument;
+            this.instrument = instrument;
         }
 
-        public string Type { get => type; set => type = value; }
-        public Status Status { get => status; set => status = value; }
-        public List<NameValuePair> Instrument { get => instrument; set => instrument = value; }
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        public Status Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public List<NameValuePair> Instrument
+        {
+            get { return instrument; }
+            set { instrument = value; }
+        }
+
     }
 }

@@ -15,8 +15,23 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.baseAmount = baseAmount;
         }
 
-        public string Kind { get => kind; set => kind = value; }
-        public string Amount { get => amount; set => amount = value; }
-        public string BaseAmount { get => baseAmount; set => baseAmount = value; }
+        public string Kind
+        {
+            get { return kind; }
+            set { kind = value; }
+        }
+
+        public string Amount
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
+
+        public string BaseAmount
+        {
+            get { return baseAmount; }
+            set { baseAmount = value; }
+        }
+
     }
 }

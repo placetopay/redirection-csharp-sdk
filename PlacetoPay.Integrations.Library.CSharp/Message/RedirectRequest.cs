@@ -5,21 +5,21 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
 {
     public class RedirectRequest : Entity
     {
-        protected string locale;
-        protected Person payer;
-        protected Person buyer;
-        protected Payment payment;
-        protected Subscription subscription;
-        protected string returnUrl;
-        protected string paymentMethod;
-        protected string cancelUrl;
-        protected string ipAddress;
-        protected string userAgent;
-        protected string expiration;
-        protected bool captureAddress;
-        protected bool skipResult = false;
-        protected bool noBuyerFill = false;
-        protected Fields fields;
+        private string locale;
+        private Person payer;
+        private Person buyer;
+        private Payment payment;
+        private Subscription subscription;
+        private string returnUrl;
+        private string paymentMethod;
+        private string cancelUrl;
+        private string ipAddress;
+        private string userAgent;
+        private string expiration;
+        private bool captureAddress;
+        private bool skipResult = false;
+        private bool noBuyerFill = false;
+        private Fields fields;
 
         public RedirectRequest(Payment payment, string returnUrl, string ipAddress, string userAgent, string expiration, string paymentMethod = null, string cancelUrl = null, bool captureAddress = false, bool skipResult = false, bool noBuyerFill= false, Person payer = null, Person buyer = null, string locale = "es_CO")
         {
@@ -53,22 +53,6 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.noBuyerFill = noBuyerFill;
         }
 
-        public string Locale { get => locale; set => locale = value; }
-        public Person Payer { get => payer; set => payer = value; }
-        public Person Buyer { get => buyer; set => buyer = value; }
-        public Payment Payment { get => payment; set => payment = value; }
-        public Subscription Subscription { get => subscription; set => subscription = value; }
-        public string ReturnUrl { get => returnUrl; set => returnUrl = value; }
-        public string PaymentMethod { get => paymentMethod; set => paymentMethod = value; }
-        public string CancelUrl { get => cancelUrl; set => cancelUrl = value; }
-        public string IpAddress { get => ipAddress; set => ipAddress = value; }
-        public string UserAgent { get => userAgent; set => userAgent = value; }
-        public string Expiration { get => expiration; set => expiration = value; }
-        public bool CaptureAddress { get => captureAddress; set => captureAddress = value; }
-        public bool SkipResult { get => skipResult; set => skipResult = value; }
-        public bool NoBuyerFill { get => noBuyerFill; set => noBuyerFill = value; }
-        public Fields Fields { get => fields; set => fields = value; }
-
         public string Language()
         {
             return this.locale.Substring(0, 2).ToUpper();
@@ -79,5 +63,199 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             return payment.Reference ?? subscription.Reference;
         }
 
+        public string Locale
+        {
+            get
+            {
+                return locale;
+            }
+
+            set
+            {
+                locale = value;
+            }
+        }
+
+        public Person Payer
+        {
+            get
+            {
+                return payer;
+            }
+
+            set
+            {
+                payer = value;
+            }
+        }
+
+        public Person Buyer
+        {
+            get
+            {
+                return buyer;
+            }
+
+            set
+            {
+                buyer = value;
+            }
+        }
+
+        public Payment Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public Subscription Subscription
+        {
+            get
+            {
+                return subscription;
+            }
+
+            set
+            {
+                subscription = value;
+            }
+        }
+
+        public string ReturnUrl
+        {
+            get
+            {
+                return returnUrl;
+            }
+
+            set
+            {
+                returnUrl = value;
+            }
+        }
+
+        public string PaymentMethod
+        {
+            get
+            {
+                return paymentMethod;
+            }
+
+            set
+            {
+                paymentMethod = value;
+            }
+        }
+
+        public string CancelUrl
+        {
+            get
+            {
+                return cancelUrl;
+            }
+
+            set
+            {
+                cancelUrl = value;
+            }
+        }
+
+        public string IpAddress
+        {
+            get
+            {
+                return ipAddress;
+            }
+
+            set
+            {
+                ipAddress = value;
+            }
+        }
+
+        public string UserAgent
+        {
+            get
+            {
+                return userAgent;
+            }
+
+            set
+            {
+                userAgent = value;
+            }
+        }
+
+        public string Expiration
+        {
+            get
+            {
+                return expiration;
+            }
+
+            set
+            {
+                expiration = value;
+            }
+        }
+
+        public bool CaptureAddress
+        {
+            get
+            {
+                return captureAddress;
+            }
+
+            set
+            {
+                captureAddress = value;
+            }
+        }
+
+        public bool SkipResult
+        {
+            get
+            {
+                return skipResult;
+            }
+
+            set
+            {
+                skipResult = value;
+            }
+        }
+
+        public bool NoBuyerFill
+        {
+            get
+            {
+                return noBuyerFill;
+            }
+
+            set
+            {
+                noBuyerFill = value;
+            }
+        }
+
+        public Fields Fields
+        {
+            get
+            {
+                return fields;
+            }
+
+            set
+            {
+                fields = value;
+            }
+        }
     }
 }

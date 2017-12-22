@@ -17,11 +17,31 @@
             this.accountNumber = accountNumber;
         }
 
-        public string BankCode { get => bankCode; set => bankCode = value; }
-        public string BankName { get => bankName; set => bankName = value; }
-        public string AccountType { get => accountType; set => accountType = value; }
-        public string AccountNumber { get => accountNumber; set => accountNumber = value; }
-        public Status Status { get => status; set => status = value; }
+        public string BankCode
+        {
+            get { return bankCode; }
+            set { bankCode = value; }
+        }
+
+        public string BankName {
+            get { return bankName; }
+            set { bankName = value; }
+        }
+
+        public string AccountType {
+            get { return accountType; }
+            set { accountType = value; }
+        }
+
+        public string AccountNumber {
+            get { return accountNumber; }
+            set { accountNumber = value; }
+        }
+
+        public Status Status {
+            get { return status; }
+            set { status = value; }
+        }
 
         public string Franchise()
         {

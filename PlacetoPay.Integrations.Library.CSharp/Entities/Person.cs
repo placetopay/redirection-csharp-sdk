@@ -25,13 +25,53 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.mobile = mobile;
         }
 
-        public long Document { get => document; set => document = value; }
-        public string DocumentType { get => documentType; set => documentType = value; }
-        public string Name { get => name; set => name = value; }
-        public string Surname { get => surname; set => surname = value; }
-        public string Company { get => company; set => company = value; }
-        public string Email { get => email; set => email = value; }
-        public string Mobile { get => mobile; set => mobile = value; }
-        internal Address Address { get => address; set => address = value; }
+        public long Document
+        {
+            get { return document; }
+            set { document = value; }
+        }
+
+        public string DocumentType
+        {
+            get { return documentType; }
+            set { documentType = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Surname
+        {
+            get { return surname; }
+            set { surname = value; }
+        }
+
+        public string Company
+        {
+            get { return company; }
+            set { company = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public string Mobile
+        {
+            get { return mobile; }
+            set { mobile = value; }
+        }
+
+        internal Address Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
     }
 }

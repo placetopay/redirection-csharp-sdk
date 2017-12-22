@@ -19,10 +19,29 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.subtotal = subtotal;
         }
 
-        public float TaxAmount { get => taxAmount; set => taxAmount = value; }
-        public float VatDevolutionBase { get => vatDevolutionBase; set => vatDevolutionBase = value; }
-        public List<TaxDetail> Taxes { get => taxes; set => taxes = value; }
-        public List<AmountDetail> Details { get => details; set => details = value; }
+        public float TaxAmount
+        {
+            get { return taxAmount; }
+            set { taxAmount = value; }
+        }
+
+        public float VatDevolutionBase
+        {
+            get { return vatDevolutionBase; }
+            set { vatDevolutionBase = value; }
+        }
+
+        public List<TaxDetail> Taxes
+        {
+            get { return taxes; }
+            set { taxes = value; }
+        }
+
+        public List<AmountDetail> Details
+        {
+            get { return details; }
+            set { details = value; }
+        }
 
         public float GetSubtotal()
         {

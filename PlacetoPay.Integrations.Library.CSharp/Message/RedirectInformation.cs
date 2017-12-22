@@ -20,12 +20,6 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.subscription = subscription;
         }
 
-        public int RequestId { get => requestId; set => requestId = value; }
-        public Status Status { get => status; set => status = value; }
-        public RedirectRequest Request { get => request; set => request = value; }
-        public List<Transaction> Payment { get => payment; set => payment = value; }
-        public SubscriptionInformation Subscription { get => subscription; set => subscription = value; }
-
         public Transaction FirstTransaction()
         {
             if (this.payment == null)
@@ -47,6 +41,71 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
         public bool IsRejected()
         {
             return this.status.status.Equals(Status.ST_REJECTED);
+        }
+
+        public int RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+
+            set
+            {
+                requestId = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public RedirectRequest Request
+        {
+            get
+            {
+                return request;
+            }
+
+            set
+            {
+                request = value;
+            }
+        }
+
+        public List<Transaction> Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public SubscriptionInformation Subscription
+        {
+            get
+            {
+                return subscription;
+            }
+
+            set
+            {
+                subscription = value;
+            }
         }
     }
 }

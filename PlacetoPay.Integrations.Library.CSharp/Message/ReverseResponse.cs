@@ -14,8 +14,31 @@ namespace PlacetoPay.Integrations.Library.CSharp.Message
             this.status = status;
         }
 
-        public Status Status { get => status; set => status = value; }
-        public Transaction Payment { get => payment; set => payment = value; }
+        public Transaction Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
 
         public bool IsSuccessful()
         {

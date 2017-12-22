@@ -17,9 +17,22 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.code = code;
             this.name = name;
         }
+        public int Einterface
+        {
+            get { return einterface; }
+            set { einterface = value; }
+        }
 
-        public int Einterface { get => einterface; set => einterface = value; }
-        public string Code { get => code; set => code = value; }
-        public string Name { get => name; set => name = value; }
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
     }
 }

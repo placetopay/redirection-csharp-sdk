@@ -28,12 +28,41 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.kind = kind;
         }
 
-        public string Name { get => name; set => name = value; }
-        public string Number { get => number; set => number = value; }
-        public string Cvv { get => cvv; set => cvv = value; }
-        public string ExpirationMonth { get => expirationMonth; set => expirationMonth = value; }
-        public int Installments { get => installments; set => installments = value; }
-        public string Kind { get => kind; set => kind = value; }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+
+        public string Cvv
+        {
+            get { return cvv; }
+            set { cvv = value; }
+        }
+
+        public string ExpirationMonth
+        {
+            get { return expirationMonth; }
+            set { expirationMonth = value; }
+        }
+
+        public int Installments
+        {
+            get { return installments; }
+            set { installments = value; }
+        }
+
+        public string Kind
+        {
+            get { return kind; }
+            set { kind = value; }
+        }
 
         public string GetExpirationYear()
         {
@@ -62,7 +91,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
 
         public string GetExpirationMonth()
         {
-            return String.Format("%1$" + 2 + "s", ExpirationMonth).Replace(" ", "0");
+            return String.Format("%1$" + 2 + "s", this.expirationMonth).Replace(" ", "0");
         }
 
 

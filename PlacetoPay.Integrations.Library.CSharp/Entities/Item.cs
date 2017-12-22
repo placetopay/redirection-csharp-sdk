@@ -19,11 +19,41 @@
             this.tax = tax;
         }
 
-        public string Sku { get => sku; set => sku = value; }
-        public string Name { get => name; set => name = value; }
-        public string Category { get => category; set => category = value; }
-        public int Qty { get => qty; set => qty = value; }
-        public float Price { get => price; set => price = value; }
-        public float Tax { get => tax; set => tax = value; }
+        public string Sku
+        {
+            get { return sku; }
+            set { sku = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
+
+        public int Qty
+        {
+            get { return qty; }
+            set { qty = value; }
+        }
+
+        public float Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public float Tax
+        {
+            get { return tax; }
+            set { tax = value; }
+        }
+
     }
 }

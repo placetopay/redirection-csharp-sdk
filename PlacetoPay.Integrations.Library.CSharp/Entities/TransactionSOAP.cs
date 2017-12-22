@@ -30,21 +30,81 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.receipt = receipt;
             this.franchise = franchise;
             this.refunded = refunded;
-            this.ProcessorFields = processorFields;
+            this.processorFields = processorFields;
         }
 
-        public Status Status { get => status; set => status = value; }
-        public string Reference { get => reference; set => reference = value; }
-        public int InternalReference { get => internalReference; set => internalReference = value; }
-        public string PaymentMethod { get => paymentMethod; set => paymentMethod = value; }
-        public string PaymentMethodName { get => paymentMethodName; set => paymentMethodName = value; }
-        public string IssuerName { get => issuerName; set => issuerName = value; }
-        public AmountConversion Amount { get => amount; set => amount = value; }
-        public string Authorization { get => authorization; set => authorization = value; }
-        public long Receipt { get => receipt; set => receipt = value; }
-        public string Franchise { get => franchise; set => franchise = value; }
-        public bool Refunded { get => refunded; set => refunded = value; }
-        public ProcessorFields ProcessorFields { get => processorFields; set => processorFields = value; }
+        public Status Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public string Reference
+        {
+            get { return reference; }
+            set { reference = value; }
+        }
+
+        public int InternalReference
+        {
+            get { return internalReference; }
+            set { internalReference = value; }
+        }
+
+        public string PaymentMethod
+        {
+            get { return paymentMethod; }
+            set { paymentMethod = value; }
+        }
+
+        public string PaymentMethodName
+        {
+            get { return paymentMethodName; }
+            set { paymentMethodName = value; }
+        }
+
+        public string IssuerName
+        {
+            get { return issuerName; }
+            set { issuerName = value; }
+        }
+
+        public AmountConversion Amount
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
+
+        public string Authorization
+        {
+            get { return authorization; }
+            set { authorization = value; }
+        }
+
+        public long Receipt
+        {
+            get { return receipt; }
+            set { receipt = value; }
+        }
+
+        public string Franchise
+        {
+            get { return franchise; }
+            set { franchise = value; }
+        }
+
+        public bool Refunded
+        {
+            get { return refunded; }
+            set { refunded = value; }
+        }
+
+        public ProcessorFields ProcessorFields
+        {
+            get { return processorFields; }
+            set { processorFields = value; }
+        }
+
 
         public bool IsSuccessful()
         {

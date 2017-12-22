@@ -20,18 +20,77 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.subscription = subscription;
         }
 
-        public int RequestId { get => requestId; set => requestId = value; }
-        public Status Status { get => status; set => status = value; }
-        public RedirectRequest Request { get => request; set => request = value; }
-        public List<Transaction> Payment { get => payment; set => payment = value; }
-        public SubscriptionInformation Subscription { get => subscription; set => subscription = value; }
-
         public Transaction FirstTransaction()
         {
             if (this.payment == null)
                 return null;
 
             return this.payment[0];
+        }
+
+        public int RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+
+            set
+            {
+                requestId = value;
+            }
+        }
+
+        public Status Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public RedirectRequest Request
+        {
+            get
+            {
+                return request;
+            }
+
+            set
+            {
+                request = value;
+            }
+        }
+
+        public List<Transaction> Payment
+        {
+            get
+            {
+                return payment;
+            }
+
+            set
+            {
+                payment = value;
+            }
+        }
+
+        public SubscriptionInformation Subscription
+        {
+            get
+            {
+                return subscription;
+            }
+
+            set
+            {
+                subscription = value;
+            }
         }
     }
 }

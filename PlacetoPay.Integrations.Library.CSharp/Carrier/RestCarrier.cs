@@ -57,9 +57,11 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
 
         public override RedirectInformation Query(string requestId)
         {
+            JToken responseJObject = null;
+
             try { 
                 var response = this.MakeRequest("POST", this.Url("api/session/" + requestId));
-                JToken responseJObject = JObject.Parse(response);
+                responseJObject = JObject.Parse(response);
                 JToken fields = responseJObject["request"]["fields"];
                 responseJObject["request"]["fields"] = null;
 
@@ -78,6 +80,12 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             catch(Exception ex)
             {
                 Status status = new Status("ERROR", "WR", PlacetoPayException.ReadException(ex), (DateTime.Now).ToString("yyyy-MM-ddTHH\\:mm\\:sszzz"));
+
+                if (responseJObject != null)
+                {
+                    status = new Status(responseJObject["status"]["status"].ToString() , responseJObject["status"]["reason"].ToString(), responseJObject["status"]["message"].ToString(), responseJObject["status"]["date"].ToString());
+                }
+
                 RedirectInformation redirectInformation = new RedirectInformation(0, status, null, null, null);
 
                 return redirectInformation;

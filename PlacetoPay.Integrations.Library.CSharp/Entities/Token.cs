@@ -25,20 +25,51 @@
             this.installments = installments;
         }
 
-        public Status Status { get => status; private set {} }
-        public string Subtoken { get => subtoken; private set { } }
-        public string FranchiseName { get => franchiseName; private set { } }
-        public string IssuerName { get => issuerName; private set { } }
-        public string LastDigits { get => lastDigits; private set { } }
-        public string ValidUntil { get => validUntil; private set { } }
-        public string Cvv { get => cvv; private set { } }
-        public string Installments { get => installments; private set { } }
-
         public bool IsSuccessful()
         {
             return this.status.status.Equals(Status.ST_OK);
-        } 
+        }
 
-       
+        public Status Status
+        {
+            get { return status; }
+            private set { }
+        }
+        public string Subtoken
+        {
+            get { return subtoken; }
+            private set { }
+        }
+        public string FranchiseName
+        {
+            get { return franchiseName; }
+            private set { }
+        }
+        public string IssuerName
+        {
+            get { return issuerName; }
+            private set { }
+        }
+        public string LastDigits
+        {
+            get { return lastDigits; }
+            private set { }
+        }
+        public string ValidUntil
+        {
+            get { return validUntil; }
+            private set { }
+        }
+        public string Cvv
+        {
+            get { return cvv; }
+            private set { }
+        }
+        public string Installments
+        {
+            get { return installments; }
+            private set { }
+        }
+
     }
 }
