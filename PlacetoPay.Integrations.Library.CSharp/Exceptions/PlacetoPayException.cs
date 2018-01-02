@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace PlacetoPay.Integrations.Library.CSharp.Exceptions
 {
-    class PlacetoPayException : Exception
+    [Serializable]
+    class PlacetoPayException : Exception, ISerializable
     {
         public PlacetoPayException(string message) : base(message)
         {
