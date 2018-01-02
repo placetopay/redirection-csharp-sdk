@@ -1,8 +1,8 @@
 # SDK Redirection for .Net Framework 4.5 
 
 ## Requerimientos
-- SoapHttpClient >= v1.4.3
-- Newtonsoft.Json >= 9.0.1
+- SoapHttpClient = v1.4.3
+- Newtonsoft.Json = 10.0.1
 
 ### Agregar dependencia en Visual Studio
 Ir al explorador de soluciones, desplegar las opciones delproyecto y luego:
