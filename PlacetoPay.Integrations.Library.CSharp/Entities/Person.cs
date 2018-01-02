@@ -4,7 +4,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
 {
     public class Person : Entity
     {
-        private long document;
+        private string document;
         private string documentType;
         private string name;
         private string surname;
@@ -13,7 +13,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
         private Address address;
         private string mobile;
 
-        public Person(long document, string documentType, string name, string surname, string email, Address address = null, string company = null, string mobile = null)
+        public Person(string document, string documentType, string name, string surname, string email, Address address = null, string company = null, string mobile = null)
         {
             this.document = document;
             this.documentType = documentType;
@@ -25,7 +25,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.mobile = mobile;
         }
 
-        public long Document
+        public string Document
         {
             get { return document; }
             set { document = value; }
