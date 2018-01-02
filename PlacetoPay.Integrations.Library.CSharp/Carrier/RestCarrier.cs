@@ -14,11 +14,8 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
 {
     public class RestCarrier : Contracts.Carrier
     {
-        private WebClient client;
-
         public RestCarrier(Authentication auth, Configuration config) : base(auth, config)
         {
-            this.client = new WebClient();
         }
 
         public override RedirectInformation Collect(CollectRequest collectRequest)
@@ -116,10 +113,10 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             client.DefaultRequestHeaders.Add("User-Agent", "Provider C#");
             dynamic package = new JObject();
             package.auth = this.AuthRequest();
-            string request = Serializer.JsonSerializer.SerializeObject(arguments);
 
             if (arguments != null)
             {
+                string request = Serializer.JsonSerializer.SerializeObject(arguments);
                 JObject requestJson = JObject.Parse(request);
                 package = requestJson;
                 package.auth = this.AuthRequest();
