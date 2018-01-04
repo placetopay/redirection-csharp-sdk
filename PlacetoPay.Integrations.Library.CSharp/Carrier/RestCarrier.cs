@@ -4,6 +4,7 @@ using PlacetoPay.Integrations.Library.CSharp.Contracts;
 using PlacetoPay.Integrations.Library.CSharp.Entities;
 using PlacetoPay.Integrations.Library.CSharp.Exceptions;
 using PlacetoPay.Integrations.Library.CSharp.Message;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -22,7 +23,9 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
         {
             try
             {
-                var response = this.MakeRequest("POST", this.Url("api/collect"), collectRequest);
+                string endpoint = "api/collect";
+                string method = "POST";
+                var response = this.MakeRequest(method, endpoint, collectRequest);
 
                 return JsonConvert.DeserializeObject<RedirectInformation>(response);
             }
@@ -39,7 +42,9 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
         {
             try
             {
-                var response = this.MakeRequest("POST", this.Url("api/session"), redirectRequest);
+                string endpoint = "api/session";
+                string method = "POST";
+                var response = this.MakeRequest(method, endpoint, redirectRequest);
 
                 return JsonConvert.DeserializeObject<RedirectResponse>(response);
             }
@@ -56,8 +61,10 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
         {
             JToken responseJObject = null;
 
-            try { 
-                var response = this.MakeRequest("POST", this.Url("api/session/" + requestId));
+            try {
+                string endpoint = "api/session/" + requestId;
+                string method = "POST";
+                var response = this.MakeRequest(method, endpoint);
                 responseJObject = JObject.Parse(response);
                 JToken fields = responseJObject["request"]["fields"];
                 responseJObject["request"]["fields"] = null;
@@ -94,7 +101,9 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             try
             {
                 Object internalReference = new { internalReference = transactionId };
-                var response = this.MakeRequest("POST", this.Url("api/reverse"), internalReference);
+                string endpoint = "api/reverse";
+                string method = "POST";
+                var response = this.MakeRequest(method, endpoint, internalReference);
 
                 return JsonConvert.DeserializeObject<ReverseResponse>(response);
             }
@@ -107,28 +116,30 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             }
         }
 
-        private string MakeRequest(string method, Uri url, object arguments = null)
+        private string MakeRequest(string method, string endpoint, object arguments = null)
         {
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "Provider C#");
             dynamic package = new JObject();
-            package.auth = this.AuthRequest();
 
             if (arguments != null)
             {
-                string request = Serializer.JsonSerializer.SerializeObject(arguments);
-                JObject requestJson = JObject.Parse(request);
+                string requesst = Serializer.JsonSerializer.SerializeObject(arguments);
+                JObject requestJson = JObject.Parse(requesst);
                 package = requestJson;
-                package.auth = this.AuthRequest();
             }
 
-            HttpContent content = new StringContent(package.ToString(), Encoding.UTF8, "application/json");
+            package.auth = this.AuthRequest();
 
-            var response = client.PostAsync(url, new StringContent(package.ToString(), Encoding.UTF8, "application/json")).Result;
+            var request = new RestRequest(endpoint, Method.POST);            
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("User-Agent", "Provider C#");
+            request.RequestFormat = DataFormat.Json;
+            request.AddParameter("application/json", package.ToString(), ParameterType.RequestBody);
 
-            var contents = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+            var client = new RestClient(this.Config.Url) { Encoding = Encoding.UTF8 };
+            IRestResponse response = client.Execute(request);
 
-            return contents.ToString();
+            return response.Content; // raw content as string
         }
 
         private dynamic AuthRequest()
@@ -138,14 +149,8 @@ namespace PlacetoPay.Integrations.Library.CSharp.Carrier
             auth.tranKey = this.Authentication.Digest();
             auth.nonce = Utils.Base64(Encoding.ASCII.GetBytes(this.Authentication.auth.GetNonce()));
             auth.seed = this.Authentication.auth.GetSeed();
-            auth.fields = "additional";
 
             return auth;
-        }
-
-        private Uri Url(string endPoint)
-        {
-            return new Uri(this.Config.Url + endPoint);
         }
     }
 }

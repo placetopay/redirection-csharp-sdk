@@ -2,7 +2,8 @@
 
 ## Requerimientos
 - SoapHttpClient = v1.4.3
-- Newtonsoft.Json = 10.0.1
+- RestSharp = v105.2.3
+- Newtonsoft.Json = v10.0.1
 
 ### Agregar dependencia en Visual Studio
 Ir al explorador de soluciones, desplegar las opciones delproyecto y luego:
