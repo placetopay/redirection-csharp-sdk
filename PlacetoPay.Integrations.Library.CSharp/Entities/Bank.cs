@@ -1,4 +1,5 @@
-﻿using PlacetoPay.Integrations.Library.CSharp.Contracts;
+﻿using Newtonsoft.Json;
+using PlacetoPay.Integrations.Library.CSharp.Contracts;
 
 namespace PlacetoPay.Integrations.Library.CSharp.Entities
 {
@@ -7,6 +8,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
         public const int INT_PUBLIC = 0;
         public const int INT_BUSINESS = 1;
 
+        [JsonProperty(PropertyName = "interface")]
         private int einterface;
         private string code;
         private string name;
