@@ -1,4 +1,5 @@
-﻿using PlacetoPay.Integrations.Library.CSharp.Contracts;
+﻿using Newtonsoft.Json;
+using PlacetoPay.Integrations.Library.CSharp.Contracts;
 
 namespace PlacetoPay.Integrations.Library.CSharp.Entities
 {
@@ -10,11 +11,7 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
         private string pin;
         private string password;
 
-        public Instrument(Token token)
-        {
-            this.token = token;
-        }
-
+        [JsonConstructor]
         public Instrument(Bank bank, Card card, Token token, string pin, string password)
         {
             this.bank = bank;
@@ -22,6 +19,11 @@ namespace PlacetoPay.Integrations.Library.CSharp.Entities
             this.token = token;
             this.pin = pin;
             this.password = password;
+        }
+
+        public Instrument(Token token)
+        {
+            this.token = token;
         }
 
         public Bank Bank
